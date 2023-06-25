@@ -1,0 +1,28 @@
+.thumbnail{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+}
+
+.thumbnail .thumbnail-image-btn{
+    width: 100%;
+    height: 40%;
+    /* position: absolute;
+    bottom : 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-self: center;
+    background-color: #ccc;
+    align-items: center;
+    cursor: pointer; */
+}
+
+.thumbnail .thumbnail-image-btn img{
+    width: 3%;
+}

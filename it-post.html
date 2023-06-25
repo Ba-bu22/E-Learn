@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="E-Learning">
+        <a href="index.html">E-Learn</a>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register-form.html">Register</a>
+        <a href="login-form.html">Login</a>
+        <a href="create-post.html">Create</a>
+    </nav>
+
+    
+    <div id="post-section">
+
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+          <div class="footer-content about">
+            <img class="logo" src="images/logo.png" alt="E-Learning">
+            <a href="index.html">E-Learn</a><br><br>
+            <p class="about">This is a Website to share Materials for all College Students.</p>
+          </div>
+          <div class="footer-content links">
+            <h1>Links</h1>
+            <ul class="page-links" style="list-style-type:disc;">
+              <a href="index.html"><li>Home</li></a>
+              <a href="create-post.html"><li>Create</li></a>
+            </ul>
+          </div>
+          <div class="footer-content contact">
+            <h1>Contact</h1>
+            <ul class="contact-list" style="list-style-type:none;">
+              <a href="#"><li>LikedIn</li></a>
+              <a href="#"><li>Insta</li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; E-Learn.com | Designed by Baburaj S
+        </div>
+      </div>
+      <script >
+        function displayPost(dept) {
+  var postsKey = dept + "_posts";
+  var posts = JSON.parse(localStorage.getItem(postsKey)) || [];
+  console.log(posts);
+  createCard(posts);
+}
+//Create Cards
+function createCard(post){
+  console.log("IN CREATE CARD");
+  var post_section = document.getElementById("post-section");
+  console.log(post_section);
+  for(var i=0; i < post.length; i++){
+    
+    var card = document.createElement("div");
+    card.className = "card";
+
+    var thumbnail = document.createElement("img");
+    thumbnail.className = "thumbnail";
+    thumbnail.src = post[i].image || "images/default_card_image_new.png";
+    thumbnail.alt = "Thumbnail";
+
+    var cardContent = document.createElement("div");
+    cardContent.className = "card-content";
+
+    var title = document.createElement("h3");
+    title.className = "card-title";
+    title.textContent = post[i].title;
+
+    var text = document.createElement("p");
+    text.className = "card-text";
+    text.textContent = post[i].content;
+
+    cardContent.appendChild(title);
+    cardContent.appendChild(text);
+
+    card.appendChild(thumbnail);
+    card.appendChild(cardContent);
+
+    post_section.appendChild(card);
+  }
+}
+displayPost("it");
+      </script>
+</body>
+</html>

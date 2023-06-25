@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+    <div class="post-container">
+        <h1>Post Material</h1>
+        <form id="post-form" >
+            <input type="file" accept="image/*" id="image-input" placeholder="Choose image for Thumbnail"><br><br>
+            <input type="text" id="title-input" placeholder="Title" required>
+            <select name="dept" id="dept-input">
+                <option value="cse">Computer Science and Engineering</option>
+                <option value="csbs">Computer Science and Business System</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics and Commuication Engineering</option>
+            </select>
+            <textarea id="content-input"  placeholder="Write your content here..." required></textarea>
+            <button type="submit">Publish</button>
+            <a href="index.html">Cancel</a>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
